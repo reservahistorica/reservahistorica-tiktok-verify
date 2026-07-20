@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva Histórica — Sobre o app</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap');
+
+  :root{
+    --parchment: #ECE4D3;
+    --parchment-deep: #DDD0B4;
+    --ink: #2B2521;
+    --ink-soft: #5B5147;
+    --seal: #7C3B2E;
+    --rule: #C9BA9B;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.65;
+  }
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  header{
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--seal);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: clamp(34px, 5vw, 48px);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+
+  h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 48px 0 16px;
+    color: var(--ink);
+  }
+
+  h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 28px 0 10px;
+  }
+
+  p{ margin: 0 0 16px; color: var(--ink-soft); }
+
+  ul{ margin: 0 0 16px; padding-left: 22px; color: var(--ink-soft); }
+  li{ margin-bottom: 8px; }
+
+  .panel{
+    background: var(--parchment-deep);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 28px 32px;
+    margin: 40px 0;
+  }
+
+  .panel p:last-child{ margin-bottom: 0; }
+
+  a{ color: var(--seal); }
+
+  footer{
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .seal-mark{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--seal);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="eyebrow">Reserva Histórica</div>
+      <h1>Um canal de história, mantido por uma pessoa só — com a ajuda de automação.</h1>
+      <p class="subtitle">Esta página descreve o aplicativo de automação de publicação usado internamente pelo canal Reserva Histórica, e a forma como ele trata dados de acesso ao TikTok.</p>
+    </header>
+
+    <section>
+      <h2>O que é o Reserva Histórica</h2>
+      <p>
+        Reserva Histórica é um canal de vídeos curtos sobre história, voltado a estudantes
+        de ENEM e vestibular e a curiosos por história em geral. O conteúdo é roteirizado,
+        narrado e editado com apoio de um pipeline de produção próprio, e depois publicado
+        nas plataformas onde o público do canal está — incluindo o TikTok.
+      </p>
+    </section>
+
+    <section>
+      <h2>O que o app faz</h2>
+      <p>
+        Este aplicativo é uma ferramenta interna de automação: ele publica, na conta oficial
+        do canal no TikTok, os vídeos já finalizados pelo pipeline de produção. Ele não é um
+        produto voltado ao público — é usado apenas pelo responsável pelo canal, na própria
+        conta do canal.
+      </p>
+      <ul>
+        <li>Autentica-se na conta TikTok do canal via login OAuth oficial do TikTok.</li>
+        <li>Envia o arquivo de vídeo já pronto para publicação, com título e legenda.</li>
+        <li>Não publica em contas de terceiros, nem oferece esse serviço a outros usuários.</li>
+      </ul>
+    </section>
+
+    <div class="panel">
+      <h3 style="margin-top:0">Política de Privacidade</h3>
+      <p><strong>Quem trata os dados:</strong> Ricardo, responsável pelo canal Reserva Histórica, único operador deste aplicativo.</p>
+      <p><strong>Quais dados são acessados:</strong> o app acessa exclusivamente informações da própria conta TikTok do canal Reserva Histórica, através da autorização concedida via login oficial do TikTok — nome de usuário, e as permissões estritamente necessárias para publicar vídeo (<em>video.publish</em>).</p>
+      <p><strong>Dados de terceiros:</strong> o app não coleta, armazena ou processa dados de nenhum outro usuário do TikTok. Não há cadastro de usuários, não há banco de dados de público, e o app não interage com contas além da do próprio canal.</p>
+      <p><strong>Armazenamento:</strong> os tokens de acesso são armazenados localmente, em ambiente controlado pelo operador do canal, e usados apenas para autenticar as chamadas de publicação.</p>
+      <p><strong>Compartilhamento:</strong> nenhum dado obtido via API do TikTok é compartilhado, vendido ou repassado a terceiros, sob nenhuma circunstância.</p>
+      <p><strong>Contato:</strong> dúvidas sobre esta política podem ser enviadas para o e-mail de contato informado no cadastro do app no TikTok for Developers.</p>
+    </div>
+
+    <footer>
+      <span class="seal-mark"></span>Reserva Histórica — página institucional mantida para fins de verificação de aplicativo.
+    </footer>
+
+  </div>
+</body>
+</html>
